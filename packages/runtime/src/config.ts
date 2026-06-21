@@ -28,8 +28,13 @@ export interface AuthResource {
 
 export interface AppResource {
   type: 'app'
-  /** Docker image or build context path. */
-  from?: string
+  /**
+   * The prebuilt container image to run, e.g. "ghcr.io/you/app:tag". Build and
+   * push your app image yourself (buildpacks are out of scope in Phase 1); the
+   * framework wires the platform-injected env (DATABASE_URL, S3_*,
+   * AUTHD_ISSUER_URL, FOUNDRY_API_*) into it.
+   */
+  image: string
   /** Port your app listens on. */
   port: number
   /** Logical names of resources to attach (db, files, etc.). */
