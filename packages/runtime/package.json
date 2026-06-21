@@ -1,0 +1,58 @@
+{
+  "name": "@foundrydb/runtime",
+  "version": "0.1.0",
+  "description": "Typed config and runtime environment accessors for FoundryDB apps",
+  "keywords": [
+    "foundrydb",
+    "framework",
+    "runtime",
+    "postgres",
+    "s3",
+    "auth"
+  ],
+  "homepage": "https://foundrydb.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foundrydb/foundry-framework.git"
+  },
+  "license": "MIT",
+  "author": "Anorph",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@aws-sdk/client-s3": ">=3.0.0",
+    "pg": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@aws-sdk/client-s3": {
+      "optional": true
+    },
+    "pg": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

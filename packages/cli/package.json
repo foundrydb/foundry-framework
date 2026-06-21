@@ -1,0 +1,42 @@
+{
+  "name": "foundry",
+  "version": "0.1.0",
+  "description": "CLI to deploy, develop, and manage FoundryDB apps",
+  "keywords": [
+    "foundrydb",
+    "framework",
+    "cli",
+    "deploy"
+  ],
+  "homepage": "https://foundrydb.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foundrydb/foundry-framework.git"
+  },
+  "license": "MIT",
+  "author": "Anorph",
+  "type": "module",
+  "bin": {
+    "foundry": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/add-shebang.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "esbuild": "^0.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
