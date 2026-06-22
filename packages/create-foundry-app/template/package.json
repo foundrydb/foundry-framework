@@ -18,7 +18,7 @@
     "@types/node": "^22.0.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "foundry": "^0.1.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "@foundrydb/cli": "^0.1.0"
   }
 }

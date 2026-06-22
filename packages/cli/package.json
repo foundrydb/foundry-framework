@@ -1,5 +1,5 @@
 {
-  "name": "foundry",
+  "name": "@foundrydb/cli",
   "version": "0.1.0",
   "description": "CLI to deploy, develop, and manage FoundryDB apps",
   "keywords": [
@@ -38,5 +38,8 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
