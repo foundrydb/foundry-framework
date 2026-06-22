@@ -45,10 +45,13 @@ export async function loadFoundryConfig(cwd: string = process.cwd()): Promise<Fo
     format: 'esm',
     platform: 'node',
     outfile: outFile,
-    // Externalize everything except the config itself so we don't bundle node_modules
-    packages: 'external',
-    // But inline @foundrydb/runtime's defineConfig since it's an identity function
-    // The user's project may or may not have it installed; if not, esbuild will error helpfully.
+    // Resolve imports (notably @foundrydb/runtime) from the project's node_modules
+    // and bundle them INLINE. The temp .mjs lives in the OS temp dir, so anything
+    // left external would be unresolvable from there at import time. A
+    // foundry.config.ts only pulls in @foundrydb/runtime (pure TS, no native
+    // deps), so inlining it keeps the compiled config self-contained. Node
+    // built-ins are externalized automatically by platform: 'node'.
+    absWorkingDir: cwd,
   })
 
   let mod: { default?: FoundryConfig }
